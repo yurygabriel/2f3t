@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(16, 137, 141);
+    background-color: rgb(0, 0, 0);
     color: aliceblue;
   }
   .calculadora{
@@ -25,6 +25,13 @@ body {
     margin: 3px;
   }
   #btn_igual{
-    background-color:yellow ;
+    background-color: tomato;
   }
+.entrada {
+  width: 40px;
+  background-color: black;
+  color: white;
+  border-bottom: 2px solid #FFF ;
+}
+
 
