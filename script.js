@@ -6,8 +6,13 @@ div = (a,b) => a / b;
 raiz = X => Math.sqrt(X);
 let a = "";
 let b = "";
+let c = "";
+let sa = "+";
+let sb = "+";
+let sc = "+";
 let valor = "";
-let temPonto = false
+let temPonto = false;
+let desligada = true;
 
 function escrever_display(num){
   document.getElementById("resultado").value = num;
@@ -44,4 +49,8 @@ function calcula(){
   b = "";
   valor = "";
   temPonto = false;
+}
+
+const set_sinal_ = ()=>{
+  
 }
