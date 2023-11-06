@@ -4,9 +4,9 @@ sub = (a,b) => a - b;
 mult = (a,b) => a * b;
 div = (a,b) => a / b;
 raiz = X => Math.sqrt(X);
-let a = "";
-let b = "";
-let c = "";
+let a = "0";
+let b = "0";
+let c = "0";
 let sa = "+";
 let sb = "+";
 let sc = "+";
@@ -51,6 +51,52 @@ function calcula(){
   temPonto = false;
 }
 
-const set_sinal_ = ()=>{
-  
+const calcula_eq2g = () =>{
+  if(a == "" || a == 0 || a == "0") return;
+  a = Number(a);
+  b = Number(b);
+  c = Number(c);
+  if(sa != "+") a = -a;
+  if(sb != "+") b = -b;
+  if(sc != "+") c = -c;
+  let delta = (b * b) - (4*a*c);
+  document.getElementById("Delta").innerHTML = "Delta = " + delta;
+  if( delta < 0) {
+    document.getElementById("raiz").innerHTML = "Não possui raiz real";
+  }
 }
+if (delta == 0){
+  let x = b/(2*a);
+  document.getElementById("raiz").innerHTML = "X1 = X2 = " + x;
+}
+if (delta > 0){
+  let x1 = (-b + Math.sqrt(delta))/(2*a);
+  let x2 = (-b + Math.sqrt(delta))/(2*a);
+  document.getElementById("raiz").innerHTML = "X1 = " + x1 + " e X2 = " + x2;
+}
+
+const set_sinal_a= ()=>{
+  sa =  document.getElementById("a").value;
+  calcula_eq2g();
+  }
+  const set_sinal_b= ()=>{
+    sb =  document.getElementById("b").value;
+    calcula_eq2g();
+    }
+    const set_sinal_c= ()=>{
+      sc =  document.getElementById("c").value;
+      calcula_eq2g();
+      }
+
+const set_valor_a= ()=>{
+a =  document.getElementById("valor_a").value;
+calcula_eq2g();
+}
+const set_valor_b= ()=>{
+  b =  document.getElementById("valor_b").value;
+  calcula_eq2g();
+  }
+  const set_valor_c= ()=>{
+    c =  document.getElementById("valor_c").value;
+    calcula_eq2g();
+    }
